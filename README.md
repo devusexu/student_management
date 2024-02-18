@@ -2,7 +2,7 @@
 
 This project is under development
 
-client: vanilla JavaScript with VScode extension Live Preview
+client: vanilla JavaScript with VScode extension Live Preview   
 server: Laravel Breeze API stack
 
 ERD below is written in Mermaid
