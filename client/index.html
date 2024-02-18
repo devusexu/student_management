@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="index.js"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .error {
+      color: red;
+    }
+
+    form {
+      margin-block-start: 1rem;
+    }
+
+    button {
+      margin-block-start: .5rem;
+    }
+
+  </style>
+</head>
+<body>
+  <article id="authenticated" class="hidden">
+    <div id="logout-error" class="error"></div>
+    <h2>User information</h3>
+    <div id="user-block"></div>
+    <button id="logout-button">logout</button>
+  </article>
+  <article id="unauthenticated" class="hidden">
+    <div id='not-logined' class="error"></div>
+    <form id="register-form">
+      <h2>Registration form</h2>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <br />
+
+      <label for="register-email">Email</label>
+      <input type="email" id="register-email" name="email" required>
+      <br />
+
+      <label for="register-password">Password</label>
+      <input type="password" id="register-password" name="password" required>
+      <br />
+
+      <label for="password_confirmation">Password confirmation</label>
+      <input type="password" id="password_confirmation" name="password_confirmation">
+      <br />
+
+      <div id="register-error" class="error"></div>
+      <button id="register-button">register</button>
+    </form>
+    <form id="login-form">
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" name="email">
+      <br />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password">
+      <br />
+
+      <div id="login-error" class="error"></div>
+      <button id="login-button">login</button>
+    </form>
+  </article>
+</body>
+</html>
