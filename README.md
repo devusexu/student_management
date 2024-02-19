@@ -12,8 +12,8 @@ ERD below is written in Mermaid
 title: Students management
 ---
 erDiagram
-    STUDENTS ||--o{ ATTENDANCE_RECORDS : "have"
-    STUDENTS ||--o{ LEAVE_RECORDS : "have"
+    STUDENTS ||--|{ ATTENDANCE_RECORDS : "have"
+    LEAVE_RECORDS o|--|{ATTENDANCE_RECORDS: "exist in"
     STUDENTS ||--|| REGISTRATION_TOKENS : "registered with"
 
    ADMINS {
@@ -29,8 +29,8 @@ erDiagram
     varchar(255) email uk
     varchar(15) phone uk
     varchar(255) password
-    date start_date  
-    date proposed_leave_date
+    date start_date
+	date proposed_leave_date
     date leave_date
    }
 
@@ -40,15 +40,12 @@ erDiagram
     date date
     time arrived_time
     time left_time
+    enum leaveSpan "['none', 'whole', 'morning', 'afternoon']"
+    int leave_id fk 
   }
 
-  LEAVE_RECORDS {
+    LEAVE_RECORDS {
     int id pk
-    int student_id fk
-    date start_date
-    date end_date
-    enum start_part "['whole', 'morning', 'afternoon']"
-    enum end_part "['whole', 'morning', 'afternoon']"
     enum type "['personal', 'sick', 'compassionate']"
     text reason
     blob attachment
