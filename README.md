@@ -29,9 +29,9 @@ erDiagram
     varchar(255) email uk
     varchar(15) phone uk
     varchar(255) password
-    date start_date
+    date start_date  
+    date proposed_leave_date
     date leave_date
-    int token_id fk
    }
 
   ATTENDANCE_RECORDS {
@@ -51,7 +51,7 @@ erDiagram
     enum end_part "['whole', 'morning', 'afternoon']"
     enum type "['personal', 'sick', 'compassionate']"
     text reason
-    blob file
+    blob attachment
   }
 
   REGISTRATION_TOKENS {
